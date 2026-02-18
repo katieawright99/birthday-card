@@ -429,17 +429,26 @@
   <!-- LEFT: Form -->
   <div class="form-panel">
     <div class="field">
-      <label>Their Name</label>
-      <input type="text" id="name" placeholder="e.g. Margaret" maxlength="50">
+      <label>1. Their Name</label>
+      <input type="text" id="name" placeholder="e.g. Annabelle" maxlength="50">
     </div>
     <div class="field">
-      <label>Their Age</label>
-      <input type="number" id="age" placeholder="e.g. 42" min="1" max="130">
+      <label>2. Their Age</label>
+      <input type="number" id="age" placeholder="e.g. 14" min="1" max="130">
     </div>
     <div class="field">
-      <label>Their Hobby or Interest</label>
-      <input type="text" id="hobby" placeholder="e.g. gardening, golf, true crime podcasts" maxlength="100">
+      <label>3. Their Hobby or Interest</label>
+      <input type="text" id="hobby" placeholder="e.g. candy, golf, true crime" maxlength="100">
     </div>
+    <div class="field">
+      <label>4. A Noun</label>
+      <input type="text" id="noun" placeholder="e.g. flamingo, spaceship, socks" maxlength="60">
+    </div>
+    <div class="field">
+      <label>5. An Adjective</label>
+      <input type="text" id="adjective" placeholder="e.g. sparkly, grumpy, magnificent" maxlength="60">
+    </div>
+    <button class="choose-btn" onclick="chooseForMe()">🎲 Choose Hobby, Noun & Adjective For Me</button>
     <button class="generate-btn" id="generateBtn" onclick="generateMessage()">✨ Write My Card Message</button>
     <div id="loading" class="loading" style="display:none">Thinking up something funny<span class="dots"></span></div>
     <div id="error" class="error" style="display:none"></div>

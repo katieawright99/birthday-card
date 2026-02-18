@@ -16,7 +16,7 @@ if not API_KEY:
 # Serve index and static files
 @app.route('/', methods=['GET'])
 def index():
-    return send_from_directory('.', 'birthdaycard.html')
+    return send_from_directory('.', 'index.html')
 
 @app.route('/<path:filename>', methods=['GET'])
 def static_files(filename):
@@ -42,4 +42,5 @@ def proxy_messages():
         return jsonify({'error': 'Server error'}), 500
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 3000)), debug=False)

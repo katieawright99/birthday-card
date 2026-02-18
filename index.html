@@ -491,10 +491,21 @@
 </div>
 
 <script>
+const HOBBIES = ['competitive cheese rolling','extreme ironing','competitive dog grooming','amateur taxidermy','cloud watching','disco roller skating','competitive eating','beekeeping','ferret racing','underwater basket weaving','professional napping','goat yoga','competitive knitting','llama trekking','competitive air guitar'];
+const NOUNS = ['flamingo','rubber duck','sock puppet','enchanted toaster','disco ball','sentient houseplant','confused penguin','glittery trombone','invisible hamster','majestic baguette','rogue shopping trolley','mystery envelope','velvet sombrero','suspicious pigeon','antique kazoo'];
+const ADJECTIVES = ['magnificently wobbly','suspiciously sparkly','aggressively cheerful','gloriously chaotic','unexpectedly majestic','chronically confused','alarmingly enthusiastic','beautifully unhinged','boldly unremarkable','tremendously wiggly','delightfully peculiar','suspiciously calm','aggressively mediocre','powerfully beige','outrageously sensible'];
+
+function chooseForMe() {
+  document.getElementById('hobby').value = HOBBIES[Math.floor(Math.random() * HOBBIES.length)];
+  document.getElementById('noun').value = NOUNS[Math.floor(Math.random() * NOUNS.length)];
+  document.getElementById('adjective').value = ADJECTIVES[Math.floor(Math.random() * ADJECTIVES.length)];
+}
 async function generateMessage() {
   const name = document.getElementById('name').value.trim();
   const age = document.getElementById('age').value.trim();
   const hobby = document.getElementById('hobby').value.trim();
+  const noun = document.getElementById('noun').value.trim();
+  const adjective = document.getElementById('adjective').value.trim();
   const errorEl = document.getElementById('error');
   const loadingEl = document.getElementById('loading');
   const btn = document.getElementById('generateBtn');
@@ -505,8 +516,8 @@ async function generateMessage() {
 
   errorEl.style.display = 'none';
 
-  if (!name || !age || !hobby) {
-    errorEl.textContent = 'Please fill in all three fields.';
+ if (!name || !age || !hobby || !noun || !adjective) {
+    errorEl.textContent = 'Please fill in all five fields (or use "Choose For Me"!).';
     errorEl.style.display = 'block';
     return;
   }
@@ -533,6 +544,7 @@ async function generateMessage() {
   copyBtn.classList.remove('visible');
 
   const prompt = `Write a funny, warm birthday card message for someone named ${name} who is turning ${age} and loves ${hobby}. 
+Creatively work in the word "${noun}" and the adjective "${adjective}" somewhere in the message in a humorous way.
 Keep it 3–5 sentences. Make a clever joke about their age and a witty nod to their hobby. Friendly, not mean. 
 Do not use quotation marks around the message. Just write the message directly.`;
 

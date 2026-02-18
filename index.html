@@ -166,6 +166,23 @@
   input:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(233,30,140,0.12); }
   input::placeholder { color: #d4a0bc; }
 
+ .choose-btn {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: var(--pink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    border: 2px dashed var(--pink-light);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    margin-bottom: 14px;
+  }
+  .choose-btn:hover { background: var(--pink-pale); border-color: var(--pink); }
+  .choose-btn:active { transform: scale(0.98); }
+
   .generate-btn {
     width: 100%;
     padding: 13px;
